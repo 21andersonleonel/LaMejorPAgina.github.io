@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu i {
+            display: none;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .portada {
+            background-image: url('imagen0');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            flex-direction: column;
+        }
+        .portada h1 {
+            font-size: 4em;
+            margin: 0;
+            background-color: rgba(0, 0, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .portada p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            background-color: rgba(0, 128, 0, 0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .parallax {
+            background-image: url('imagen1');
+            height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .content {
+            padding: 20px;
+        }
+        h1 {
+            color: blue;
+            font-size: 3em;
+            background-color: lightblue;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            color: green;
+            font-size: 2em;
+            background-color: lightgreen;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        p {
+            color: black;
+        }
+        .slider {
+            width: 100%;
+            overflow: hidden;
+        }
+        .slider img {
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+        }
+        .carousel img {
+            width: 100%;
+            flex: 0 0 auto;
+            transition: transform 0.5s ease-in-out;
+        }
+        .table-container {
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 15px;
+        }
+        .card-content h3 {
+            color: blue;
+            margin-top: 0;
+        }
+        .card-content p {
+            margin-bottom: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .menu i {
+                display: block;
+                font-size: 1.5em;
+            }
+            nav ul {
+                display: none;
+                flex-direction: column;
+            }
+            nav ul.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <div>Pandas</div>
+            <i class="fas fa-bars"></i>
+            <nav>
+                <ul>
+                    <li><a href="#section1">Inicio</a></li>
+                    <li><a href="#section2">Información</a></li>
+                    <li><a href="#section3">Galería</a></li>
+                    <li><a href="#section4">Tabla</a></li>
+                    <li><a href="#section5">Tarjetas</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="portada">
+        <h1>Bienvenidos a la Página de Pandas</h1>
+        <p>Descubre todo sobre los maravillosos pandas gigantes</p>
+        
+    </div>
+    <img src="https://cdn.aarp.net/content/aarpe/es/home/hogar-familia/familia-bienestar/info-2020/camara-en-linea-para-ver-oso-panda/_jcr_content/root/container_main/container_body_main/container_body1/container_body_cf/container_image/articlecontentfragment/cfimage.coreimg.50.932.jpeg/content/dam/aarp/home-and-family/family-and-friends/2020/08/1140-panda-smithsonian-esp.jpg" alt="Panda 1">
+
+    <div class="parallax"></div>
+    
+    <div class="content" id="section1">
+        <h1>Pandas</h1>
+        <p>El panda gigante es un mamífero originario de China. Se caracteriza por sus distintivas manchas negras alrededor de los ojos, orejas y en su cuerpo. Es una especie en peligro de extinción y su principal alimento es el bambú. <br>Creado por Leonel y Alfredo</p>
+    </div>
+    
+    <div class="slider">
+        <img src="https://cnnespanol.cnn.com/wp-content/uploads/2024/03/osos-panda-getty.jpg?quality=100&strip=info" alt="Panda Slider">
+    </div>
+    
+    <div class="content" id="section2">
+        <h2>Hábitat</h2>
+        <p>Los pandas gigantes son osos nativos de China que habitan en regiones montañosas, principalmente en las provincias de Sichuan, Shaanxi y Gansu. Su pelaje blanco y negro, su dieta basada en bambú y su estado de peligro de extinción debido a la pérdida de hábitat los hacen una especie icónica que requiere esfuerzos de conservación. 🐼
+
+
+
+            <br>Creado por Leonel y Alfredo</p>
+    </div>
+    
+    <div class="carousel" id="section3">
+        <img src="https://static.nationalgeographic.es/files/styles/image_3200/public/naturepl_01679242.jpg?w=1600&h=900" alt="Panda 1">
+        <img src="https://ca-times.brightspotcdn.com/dims4/default/7a82198/2147483647/strip/true/crop/5700x3799+0+0/resize/1200x800!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa9%2F85%2F780866934fa4296caf21c1ddd64a%2F10e19625770f4e44960ce1d65a1eec2f" alt="Panda 2">
+        <img src="https://cdn.mos.cms.futurecdn.net/3n8tRry6fYg7sNyhFDPQwR-1200-80.jpg" alt="Panda 3">
+    </div>
+    
+    <div class="content" id="section4">
+        <h2>Datos sobre los Pandas</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Característica</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nombre Científico</td>
+                        <td>Ailuropoda melanoleuca</td>
+                    </tr>
+                    <tr>
+                        <td>Hábitat</td>
+                        <td>Montañas de China</td>
+                    </tr>
+                    <tr>
+                        <td>Alimentación</td>
+                        <td>Bambú</td>
+                    </tr>
+                    <tr>
+                        <td>Estado de Conservación</td>
+                        <td>En peligro de extinción</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Creado por Leonel y Alfredo</p>
+        </div>
+    </div>
+
+    <div class="content" id="section5">
+        <h2>Más información</h2>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/53/ab/f9/53abf91bb056d79f84d08fa861696123.jpg" alt="Panda 1">
+                <div class="card-content">
+                    <h3>Biología del Panda</h3>
+                    <p>Los pandas son animales solitarios que pasan la mayor parte de su tiempo alimentándose y durmiendo.</p>
+                    <p>Creado por Leonel y Alfredo</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/474x/f0/73/b3/f073b3108cb9072b07b48a1f0f22102c.jpg" alt="Panda 2">
+                <div class="card-content">
+                    <h3>Conservación</h3>
+                    <p>Los esfuerzos de conservación han ayudado a aumentar la población de pandas en la naturaleza.</p>
+                    <p>Creado por Leonel y Alfredo</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.ytimg.com/vi/l73rmrLTHQc/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC7Y00xbqZrsz1M6ZxpFKharFT0Yg" alt="Panda 3">
+                <div class="card-content">
+                    <h3>Cultura</h3>
+                    <p>El panda gigante es un símbolo nacional de China y representa paz y amistad.</p>
+                    <p>Creado por Leonel y Alfredo</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Creado por Leonel y Alfredo</p>
+    </footer>
+    
+    <script>
+        document.querySelector('.menu i').addEventListener('click', () => {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slider img');
+        setInterval(() => {
+            slides.forEach((slide, index) => {
+                slide.style.transform = `translateX(-${100 * currentSlide}%)`;
+            });
+            currentSlide = (currentSlide + 1) % slides.length;
+        }, 3000);
+        
+        let currentImage = 0;
+        const images = document.querySelectorAll('.carousel img');
+        setInterval(() => {
+            images.forEach((img, idx) => {
+                img.style.transform = `translateX(-${100 * currentImage}%)`;
+            });
+            currentImage = (currentImage + 1) % images.length;
+        }, 3000);
+    </script>
+</body>
+</html>
